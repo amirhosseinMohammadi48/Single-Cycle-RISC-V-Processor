@@ -1,0 +1,109 @@
+`include "ALUControl.sv"
+
+module Controller(
+    input [6:0] opcode,
+    input [2:0] func3,
+    input [6:0] func7,
+    input zero,
+    input less,
+    output [2:0] ALU_select,
+    output reg [1:0] PCSrc,
+    output reg [1:0] writeSrc,
+    output reg memory_write_enable,ALUSrc_in2,register_write_enable
+);
+
+    ALUControl alu_controller(
+        .opcode(opcode),
+        .func3(func3), 
+        .func7(func7),
+        .select(ALU_select)
+    );
+
+    always @(*) begin
+
+        case (opcode)
+            
+            // R-Type
+            7'b0110011: begin
+                if (func3 == 3'b010)
+                    writeSrc = 2'b11;     
+                else
+                    writeSrc = 2'b00;
+                PCSrc = 2'b00;
+                memory_write_enable = 0;
+                ALUSrc_in2 = 0;
+                register_write_enable = 1;
+            end
+
+            // I-Type arithmetic
+            7'b0010011: begin
+                if (func3 == 3'b010)
+                    writeSrc = 2'b11;     
+                else 
+                    writeSrc = 2'b00;
+                PCSrc = 2'b00;
+                memory_write_enable = 0;
+                ALUSrc_in2 = 1;
+                register_write_enable = 1;
+            end
+
+            // I-Type Load Word
+            7'b0000011: begin
+                writeSrc = 2'b01;    
+                PCSrc = 2'b00;
+                memory_write_enable = 0;
+                ALUSrc_in2 = 1;
+                register_write_enable = 1;
+            end
+
+            // I-Type Jalr
+            7'b1100111: begin
+                writeSrc = 2'b10;
+                PCSrc = 2'b10;
+                memory_write_enable = 0;
+                ALUSrc_in2 = 1;
+                register_write_enable = 1;
+            end
+
+            // S-Type
+            7'b0100011: begin
+                writeSrc = 2'b00;
+                PCSrc = 2'b00;
+                memory_write_enable = 1;
+                ALUSrc_in2 = 1;
+                register_write_enable = 0;
+            end
+
+            // B-Type
+            7'b1100011: begin
+                memory_write_enable = 0;
+                ALUSrc_in2 = 0;
+                register_write_enable = 0;
+                writeSrc = 2'b00;
+                if( (func3 == 3'b000 & zero) | (func3 == 3'b001 & ~zero) | (func3 == 3'b100 & less) | (func3 == 3'b101 & ~less))        
+                    PCSrc = 2'b01;
+                else
+                    PCSrc = 2'b00;
+            end
+
+            
+            // J-Type
+            7'b1101111: begin
+                writeSrc = 2'b10;
+                PCSrc = 2'b01;
+                memory_write_enable = 0;
+                ALUSrc_in2 = 1;
+                register_write_enable = 1;
+            end
+
+
+            default: begin
+                writeSrc =2'b00;
+                PCSrc = 2'b00;
+                memory_write_enable = 0;
+                ALUSrc_in2 = 0;
+                register_write_enable = 0;
+            end
+        endcase
+    end
+endmodule

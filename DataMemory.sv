@@ -1,0 +1,34 @@
+module DataMemory(
+    input clk,rst,
+    input [31:0] addr,
+    input [31:0] write_data,
+    input write_enable,
+    output [31:0] read_data
+);
+
+    reg [7:0] data_memory [0:511];
+
+    genvar q;
+    generate
+        for(q = 0; q < 512; q = q + 1) begin
+            wire [7:0] w;
+            assign w = data_memory[q];
+        end
+    endgenerate
+
+    assign read_data = {data_memory[addr+3],data_memory[addr+2],data_memory[addr+1],data_memory[addr]};
+    
+    integer i;
+    always @(posedge clk or posedge rst) begin
+        
+        if (rst) begin
+            for (i = 0; i < 512; i = i + 1)
+                data_memory[i] <= 8'b0;
+           end
+        
+        if (write_enable)
+            {data_memory[addr+3],data_memory[addr+2],data_memory[addr+1],data_memory[addr]} <= write_data;
+
+    end
+
+endmodule

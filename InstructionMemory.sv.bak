@@ -1,0 +1,33 @@
+module InstructionMemory (
+    input [31:0] pc,
+    output [31:0] instruction
+);
+
+    reg [7:0] instruction_memory [0:511];
+    reg [31:0] instr_32bit_mem [0:127];
+    
+    genvar q;
+    generate
+        for(q = 0; q < 512; q = q + 1) begin
+            wire [7:0] w;
+            assign w = instruction_memory[q];
+        end
+    endgenerate
+
+    assign instruction = { instruction_memory[pc+3], instruction_memory[pc+2], instruction_memory[pc+1], instruction_memory[pc] };
+
+    integer i;
+
+    initial begin
+    $readmemb("jj.mem", instr_32bit_mem);
+
+    for (i = 0; i < 128; i = i + 1) begin
+        instruction_memory[i*4 + 0] = instr_32bit_mem[i][7:0];  
+        instruction_memory[i*4 + 1] = instr_32bit_mem[i][15:8];    
+        instruction_memory[i*4 + 2] = instr_32bit_mem[i][23:16];  
+        instruction_memory[i*4 + 3] = instr_32bit_mem[i][31:24];  
+    end
+    end
+
+
+endmodule

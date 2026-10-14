@@ -1,0 +1,35 @@
+# Compile of Adder.sv was successful.
+# Compile of ALU.sv was successful.
+# Compile of ALUControl.sv was successful.
+# Compile of Controller.sv was successful.
+# Compile of DataMemory.sv was successful.
+# Compile of ImmediateGenerator.sv was successful.
+# Compile of InstructionMemory.sv was successful.
+# Compile of MUX.sv was successful.
+# Compile of Register.sv was successful.
+# Compile of RegisterFile.sv was successful.
+# Compile of Topmodule.sv was successful.
+# Compile of TopmoduleTB.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim work.TopmoduleTB
+# vsim work.TopmoduleTB 
+# Start time: 21:30:46 on May 19,2026
+# Loading sv_std.std
+# Loading work.TopmoduleTB
+# Loading work.CPU
+# Loading work.Controller
+# Loading work.ALUControl
+# Loading work.MUX
+# Loading work.Register
+# Loading work.Adder
+# Loading work.InstructionMemory
+# Loading work.RegisterFile
+# Loading work.DataMemory
+# Loading work.ImmediateGenerator
+# Loading work.ALU
+add wave -position insertpoint sim:/TopmoduleTB/cpu/*
+run -all
+# ** Note: $finish    : D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/TopmoduleTB.sv(19)
+#    Time: 20005 ns  Iteration: 0  Instance: /TopmoduleTB
+# 1
+# Break in Module TopmoduleTB at D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/TopmoduleTB.sv line 19

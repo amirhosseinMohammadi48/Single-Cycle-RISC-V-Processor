@@ -1,0 +1,100 @@
+D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/Controller.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/Controller.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALUControl
+-- Compiling module Controller
+
+Top level modules:
+	Controller
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/RegisterFile.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/RegisterFile.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/Register.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/Register.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Register
+
+Top level modules:
+	Register
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/ImmediateGenerator.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/ImmediateGenerator.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ImmediateGenerator
+
+Top level modules:
+	ImmediateGenerator
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/Topmodule.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/Topmodule.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Adder
+-- Compiling module ALU
+-- Compiling module ALUControl
+-- Compiling module Controller
+-- Compiling module DataMemory
+-- Compiling module ImmediateGenerator
+-- Compiling module InstructionMemory
+-- Compiling module MUX
+-- Compiling module Register
+-- Compiling module RegisterFile
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/ALU.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/MUX.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/MUX.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MUX
+
+Top level modules:
+	MUX
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/DataMemory.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/DataMemory.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DataMemory
+
+Top level modules:
+	DataMemory
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/ALUControl.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/ALUControl.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALUControl
+
+Top level modules:
+	ALUControl
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/TopmoduleTB.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/TopmoduleTB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Adder
+-- Compiling module ALU
+-- Compiling module ALUControl
+-- Compiling module Controller
+-- Compiling module DataMemory
+-- Compiling module ImmediateGenerator
+-- Compiling module InstructionMemory
+-- Compiling module MUX
+-- Compiling module Register
+-- Compiling module RegisterFile
+-- Compiling module CPU
+-- Compiling module TopmoduleTB
+
+Top level modules:
+	TopmoduleTB
+
+} {} {}} D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/Adder.sv {1 {vlog -work work -sv -stats=none D:/university/ee/dars/computerArchitecture/CA/CA111/verilogCodes/Adder.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Adder
+
+Top level modules:
+	Adder
+
+} {} {}}

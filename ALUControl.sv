@@ -1,0 +1,79 @@
+module ALUControl (
+    input [6:0] opcode,
+    input [2:0] func3,
+    input [6:0] func7,
+    output reg [2:0] select
+);
+    always@(*) begin
+        
+        case(opcode)
+            
+            //  RT
+            7'b0110011:
+            
+                case(func3)
+
+                    3'b000:
+                        if (func7 == 7'b0100000)
+                            select = 3'b001;
+                        else 
+                            select = 3'b000;
+                    // And
+                    3'b111:
+                        select = 3'b010;
+                    // Or
+                    3'b110:
+                        select = 3'b011;
+                    // SLT
+                    3'b010:
+                        select = 3'b001;
+
+                endcase
+
+            //  I-Types
+            7'b0010011:
+                case(func3) 
+
+                    // Addi
+                    3'b000:
+                        select = 3'b000;
+                    // Ori
+                    3'b110:
+                        select = 3'b011;
+                    // SLTI
+                    3'b010:
+                        select = 3'b001;
+		    // XORI
+		    3'b100:
+                        select = 3'b111;
+
+                endcase
+
+            //Jalr
+            7'b1100111:
+                select = 3'b000;
+            
+            // Load Word
+            7'b0000011:
+                select = 3'b000;
+
+            // S-Type
+            7'b0100011:
+                select = 3'b000;
+
+            // B-Type
+            7'b1100011:
+                select = 3'b001;
+                        
+            // J-Type
+            7'b1101111:
+                select = 3'b111;
+
+            default:
+                select = 3'b110;
+                
+        endcase
+
+    end
+
+endmodule
