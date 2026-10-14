@@ -41,7 +41,7 @@ The processor is organized around the following components:
 
 ## Technologies
 
-- **Hardware Description Language:** Verilog HDL
+- **Hardware Description Language:** SystemVerilog
 - **Architecture:** RISC-V
 - **Design Approach:** Single-cycle processor
 
