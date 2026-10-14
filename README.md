@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project focuses on the design and implementation of a single-cycle RISC-V processor using Verilog HDL. The processor's datapath and control unit are designed to execute supported instructions within a single clock cycle.
+This project focuses on the design and implementation of a single-cycle RISC-V processor using SystemVerilog. The processor's datapath and control unit are designed to execute supported instructions within a single clock cycle.
 
 The project explores the fundamental concepts of processor architecture, instruction decoding, ALU operations, control signal generation, and datapath design.
 
